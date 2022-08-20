@@ -60,7 +60,6 @@ var startClick = document.getElementById("start-btn");
 startClick.addEventListener("click", startQuiz);
 
 document.querySelector(".quiz").hidden = true;
-document.querySelector(".allDone").hidden = true;
 
 function startQuiz () {
     document.querySelector(".main").hidden = true;
@@ -199,5 +198,27 @@ function scoreSubmit (event) {
         };
         highScoresArray.push(finalScore);
         console.log(highScoresArray);
+        saveHighScores();
+        window.location.href="./scores.html";
      }
 }
+
+function saveHighScores () {
+    localStorage.setItem("scores", JSON.stringify(highScoresArray));
+}
+
+function loadHighScores () {
+    highScores = localStorage.getItem("scores");
+    highScores = JSON.parse(highScores);
+    highScoresArray = highScores;
+
+    for (i = 0; i < highScores.length; i++) {
+        var listItemEl = document.createElement("li");
+        listItemEl.className = "score-list-item";
+        listItemEl.textContent = highScores[i].initials + " " + highScores[i].score;
+        document.querySelector(".score-list").appendChild(listItemEl);
+    }
+}
+
+//saveHighScores();
+loadHighScores();
