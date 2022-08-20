@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
     <header>
         <a>View High Scores</a>
-        <p>Time</p>
+        <p id="timer"></p>
     </header>
     <main class="main">
         <h1>Coding Quiz Challenge</h1>
@@ -17,21 +18,33 @@
             Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!
         </p>
         <div class="start-btn">
-            <button id="start-btn">Start Quiz</button>
+            <button class="btn" id="start-btn">Start Quiz</button>
         </div>
     </main>
     <section class="quiz">
         <h1 class="question"></h1>
         <div class="answers">
-            <button id="answer-one" data-answer="incorrect"></button>
+            <button class="btn" id="answer-one" data-answer="incorrect"></button>
             <br>
-            <button id="answer-two" data-answer="correct"></button>
+            <button class="btn" id="answer-two" data-answer="correct"></button>
             <br>
-            <button id="answer-three" data-answer="incorrect"></button>
+            <button class="btn" id="answer-three" data-answer="incorrect"></button>
             <br>
-            <button id="answer-four" data-answer="incorrect"></button>
+            <button class="btn" id="answer-four" data-answer="incorrect"></button>
+        </div>
+    </section>
+    <section class="allDone">
+        <h1>All done!</h1>
+        <h2>Your final score is <span id="finalScore"></span>.</h2>
+        <div class="initials-div">
+            <form class="initials-form">
+                <h2>Enter Initials:</h2>
+                <input type="text" id="initials-input" />
+                <button class="btn" type="submit" id="initials-submit">Submit</button>
+            </form>
         </div>
     </section>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
+
