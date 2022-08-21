@@ -10,4 +10,11 @@ function loadHighScores () {
     }
 }
 
+function clearScores() {
+    localStorage.clear();
+    location.reload();
+}
+
+document.getElementById("clear-scores").addEventListener("click", clearScores);
+
 loadHighScores();

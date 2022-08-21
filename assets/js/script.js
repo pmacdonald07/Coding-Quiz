@@ -163,8 +163,7 @@ function allDone () {
         countdown = 0;
     }
     document.querySelector(".answers").hidden = true;
-    // document.querySelector(".allDone").hidden = false;
-    //document.querySelector("#finalScore").textContent = countdown;
+
     document.querySelector(".question").textContent = "All done!";
 
     var scoreTotalEl = document.createElement("h2");
@@ -176,8 +175,6 @@ function allDone () {
     allDoneDivEl.className = "all-done-div";
     allDoneDivEl.innerHTML = "<h2>Enter Initials:</h2><form class='initials-form'><input type=text id='initials-input' /><button class='btn' id='initials-btn' type='submit'>Submit</button></form>";
     scoreTotalEl.appendChild(allDoneDivEl);
-
-    debugger;
 
     document.querySelector(".initials-form").addEventListener("submit", scoreSubmit);
 }
@@ -216,9 +213,8 @@ function loadHighScores () {
         var listItemEl = document.createElement("li");
         listItemEl.className = "score-list-item";
         listItemEl.textContent = highScores[i].initials + " " + highScores[i].score;
-        document.querySelector(".score-list").appendChild(listItemEl);
+        documents.querySelector(".score-list").appendChild(listItemEl);
     }
 }
 
-//saveHighScores();
 loadHighScores();
