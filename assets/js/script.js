@@ -1,41 +1,41 @@
 const questionOne = {
-    question: "Question 1 text",
-    answerOne: "Answer 1 text",
-    answerTwo: "Answer 2 text",
-    answerThree: "Answer 3 text",
-    answerFour: "Answer 4 text"
+    question: "What is the correct syntax for referencing a class?",
+    answerOne: "1. #className",
+    answerTwo: "2. .className",
+    answerThree: "3. $className",
+    answerFour: "4. !className"
 };
 
 const questionTwo = {
-    question: "Question 2 text",
-    answerOne: "Q2 Answer 1 text",
-    answerTwo: "Q2 Answer 2 text",
-    answerThree: "Q2 Answer 3 text",
-    answerFour: "Q2 Answer 4 text"
+    question: "What is the git command to update a remote repository from a local repository?",
+    answerOne: "1. git push",
+    answerTwo: "2. git pull",
+    answerThree: "3. git log",
+    answerFour: "4. git branch"
 };
 
 const questionThree = {
-    question: "Question 3 text",
-    answerOne: "Q3 Answer 1 text",
-    answerTwo: "Q3 Answer 2 text",
-    answerThree: "Q3 Answer 3 text",
-    answerFour: "Q3 Answer 4 text"
+    question: "What CSS tool can we use to style webpages differently based on screen size?",
+    answerOne: "1. universal selectors",
+    answerTwo: "2. display: flex",
+    answerThree: "3. justify-content",
+    answerFour: "4. media queries"
 };
 
 const questionFour = {
-    question: "Question 4 text",
-    answerOne: "Q4 Answer 1 text",
-    answerTwo: "Q4 Answer 2 text",
-    answerThree: "Q4 Answer 3 text",
-    answerFour: "Q4 Answer 4 text"
+    question: "Which JavaScript function generates a number between 0 and 1?",
+    answerOne: "1. Math.floor()",
+    answerTwo: "2. Math.random()",
+    answerThree: "3. Math.PI()",
+    answerFour: "4. Math.log()"
 };
 
 const questionFive = {
-    question: "Question 5 text",
-    answerOne: "Q5 Answer 1 text",
-    answerTwo: "Q5 Answer 2 text",
-    answerThree: "Q5 Answer 3 text",
-    answerFour: "Q5 Answer 4 text"
+    question: "When asked if he could perform in the rain at the Super Bowl XLI halftime show, how did Prince respond?",
+    answerOne: "1. 'Only if the rain is purple.'",
+    answerTwo: "2. 'No, it will be too dangerous!'",
+    answerThree: "3. 'Can you make it rain harder?'",
+    answerFour: "4. 'Pink Chasmere is underrated.'"
 };
 
 const questionArray = [questionOne, questionTwo, questionThree, questionFour, questionFive];
@@ -182,7 +182,6 @@ function allDone () {
 function scoreSubmit (event) {
     event.preventDefault();
     var initials = document.querySelector("#initials-input").value;
-    console.log(initials);
 
     if (!initials) {
          alert("You need to input your initials!");
@@ -194,7 +193,6 @@ function scoreSubmit (event) {
             score: countdown
         };
         highScoresArray.push(finalScore);
-        console.log(highScoresArray);
         saveHighScores();
         window.location.href="./scores.html";
      }
@@ -208,6 +206,10 @@ function loadHighScores () {
     highScores = localStorage.getItem("scores");
     highScores = JSON.parse(highScores);
     highScoresArray = highScores;
+
+    if (highScoresArray === null) {
+        highScoresArray = [];
+    }
 
     for (i = 0; i < highScores.length; i++) {
         var listItemEl = document.createElement("li");
